@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Builder;
+namespace Tests\Builder;
 
-use Builder\Stub\StubUser;
+use App\Domain\User\User;
 use DateTimeImmutable;
 use DateTimeInterface;
+use Tests\Builder\Stub\StubUser;
 
 final class UserBuilder
 {
@@ -31,7 +32,7 @@ final class UserBuilder
         $this->updated_at = new DateTimeImmutable();
     }
 
-    public function build(): StubUser
+    public function build(): User
     {
         $user = new StubUser();
         $user->setDateFormat('Y-m-d');

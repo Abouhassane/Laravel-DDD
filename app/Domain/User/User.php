@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Models;
+declare(strict_types=1);
 
-use App\Domain\BaseEntity\BusinessEntity;
+namespace App\Domain\User;
+
+use App\Domain\BusinessEntity;
 use App\Infrastructure\User\EloquentUser;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\MustVerifyEmail;

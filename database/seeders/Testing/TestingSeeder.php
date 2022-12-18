@@ -1,8 +1,9 @@
 <?php
 
-namespace Database\Seeders;
+declare(strict_types=1);
 
-use Database\Seeders\Testing\UserSeeder;
+namespace Database\Seeders\Testing;
+
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 

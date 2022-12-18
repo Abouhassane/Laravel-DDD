@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders\Testing;
 
-use App\Models\User;
+use App\Domain\User\User;
 use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder

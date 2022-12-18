@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Tests\Builder\Stub;
 
-use App\Domain\User\User;
+use App\Domain\Project\Project;
 
-final class StubUser extends User
+final class StubProject extends Project
 {
     public function delete(): bool
     {
