@@ -2,15 +2,18 @@
 
 namespace Database\Seeders;
 
+use Database\Seeders\Testing\UserSeeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class TestingSeeder extends Seeder
 {
     use WithoutModelEvents;
 
     public function run(): void
     {
-        $this->call([]);
+        $this->call([
+            UserSeeder::class,
+        ]);
     }
 }
