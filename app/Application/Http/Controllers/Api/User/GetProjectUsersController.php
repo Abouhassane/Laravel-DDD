@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Application\Http\Controllers\Api\User;
+
+use App\Application\Http\Controllers\Controller;
+use App\Domain\Project\Project;
+use Illuminate\Http\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
+
+class GetProjectUsersController extends Controller
+{
+    public function __invoke(Project $project): JsonResponse
+    {
+        return new JsonResponse(
+            [
+                'results' => $project->users,
+                'nb_results' => $project->users->count(),
+            ],
+            Response::HTTP_OK,
+        );
+    }
+}

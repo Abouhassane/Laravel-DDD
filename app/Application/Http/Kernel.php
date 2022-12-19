@@ -65,6 +65,8 @@ class Kernel extends HttpKernel
             'throttle:api',
             SubstituteBindings::class,
         ],
+
+        'admin' => [],
     ];
 
     /**

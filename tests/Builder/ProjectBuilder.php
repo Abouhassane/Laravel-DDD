@@ -6,8 +6,10 @@ namespace Tests\Builder;
 
 use App\Domain\Project\Project;
 use App\Domain\Project\ProjectStatus;
+use App\Domain\User\User;
 use DateTimeImmutable;
 use DateTimeInterface;
+use Illuminate\Support\Collection;
 use Tests\Builder\Stub\StubProject;
 
 final class ProjectBuilder
@@ -19,8 +21,12 @@ final class ProjectBuilder
     private ?DateTimeInterface $started_at;
     private ?DateTimeInterface $blocked_at;
     private ?DateTimeInterface $terminated_at;
+    private ?DateTimeInterface $deleted_at;
     private DateTimeInterface $created_at;
     private DateTimeInterface $updated_at;
+
+    /** Relationships */
+    private Collection $users;
 
     public function __construct()
     {
@@ -31,8 +37,12 @@ final class ProjectBuilder
         $this->started_at = null;
         $this->blocked_at = null;
         $this->terminated_at = null;
+        $this->deleted_at = null;
         $this->created_at = new DateTimeImmutable();
         $this->updated_at = new DateTimeImmutable();
+
+        /** Relationships */
+        $this->users = new Collection([]);
     }
 
     public function build(): Project
@@ -46,8 +56,12 @@ final class ProjectBuilder
         $project->started_at = $this->started_at;
         $project->blocked_at = $this->blocked_at;
         $project->terminated_at = $this->terminated_at;
+        $project->deleted_at = $this->deleted_at;
         $project->created_at = $this->created_at;
         $project->updated_at = $this->updated_at;
+
+        /** Relationships */
+        $project->users = $this->users;
 
         return $project;
     }
@@ -93,6 +107,20 @@ final class ProjectBuilder
     {
         $this->status = ProjectStatus::TERMINATED;
         $this->terminated_at = new DateTimeImmutable();
+
+        return $this;
+    }
+
+    public function deleted(): self
+    {
+        $this->deleted_at = new DateTimeImmutable();
+
+        return $this;
+    }
+
+    public function withUser(User $user = null): self
+    {
+        $this->users->push($user ?? (new UserBuilder())->build());
 
         return $this;
     }
