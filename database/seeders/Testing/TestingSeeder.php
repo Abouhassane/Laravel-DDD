@@ -14,7 +14,7 @@ class TestingSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            UserSeeder::class,
+            UserProjectSeeder::class,
         ]);
     }
 }

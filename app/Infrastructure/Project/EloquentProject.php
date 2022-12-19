@@ -16,6 +16,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Collection;
 
 /**
+ * @method static ProjectFactory factory(callable|array|int|null $count = null, callable|array $state = [])
+ *
  * @property int                    $id
  * @property string                 $title
  * @property ProjectStatus          $status

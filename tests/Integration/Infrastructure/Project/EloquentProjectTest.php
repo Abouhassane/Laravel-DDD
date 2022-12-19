@@ -14,8 +14,8 @@ final class EloquentProjectTest extends IntegrationTestCase
     public function testItAttachUsersToAProject(): void
     {
         // Arrange
-        $users = User::factory(2)->create();
         $project = Project::factory()->create();
+        $users = User::factory(2)->create();
 
         // Act
         $project->users()->sync($users);

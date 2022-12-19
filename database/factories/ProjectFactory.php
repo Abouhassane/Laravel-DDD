@@ -6,6 +6,7 @@ namespace Database\Factories;
 
 use App\Domain\Project\Project;
 use App\Domain\Project\ProjectStatus;
+use DateTimeImmutable;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -27,6 +28,7 @@ class ProjectFactory extends Factory
             'started_at' => null,
             'blocked_at' => null,
             'terminated_at' => null,
+            'deleted_at' => null,
         ];
     }
 
@@ -34,7 +36,7 @@ class ProjectFactory extends Factory
     {
         return $this->state(fn(array $attributes) => [
             'status' => ProjectStatus::IN_PROGRESS,
-            'started_at' => now(),
+            'started_at' => new DateTimeImmutable(),
         ]);
     }
 
@@ -42,7 +44,7 @@ class ProjectFactory extends Factory
     {
         return $this->state(fn(array $attributes) => [
             'status' => ProjectStatus::BLOCKED,
-            'blocked_at' => now(),
+            'blocked_at' => new DateTimeImmutable(),
         ]);
     }
 
@@ -50,7 +52,14 @@ class ProjectFactory extends Factory
     {
         return $this->state(fn(array $attributes) => [
             'status' => ProjectStatus::TERMINATED,
-            'terminated_at' => now(),
+            'terminated_at' => new DateTimeImmutable(),
+        ]);
+    }
+
+    public function deleted(): static
+    {
+        return $this->state(fn(array $attributes) => [
+            'deleted_at' => new DateTimeImmutable(),
         ]);
     }
 }

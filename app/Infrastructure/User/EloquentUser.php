@@ -16,6 +16,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Collection;
 
 /**
+ * @method static UserFactory factory(callable|array|int|null $count = null, callable|array $state = [])
+ *
  * @property int                    $id
  * @property string                 $name
  * @property string                 $email
