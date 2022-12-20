@@ -18,3 +18,28 @@ jobs:
             -   name: Run tests
                 run: php artisan test --testsuite=Unit
                 shell: bash
+
+    php-integration-tests:
+        name: PHP - Integration Tests
+        runs-on: ubuntu-20.04
+        if: (!contains(github.ref, 'refs/heads/master') && !contains(github.ref, 'refs/heads/staging'))
+
+        services:
+            mysql:
+                image: mysql:5.7
+                env:
+                    MYSQL_ALLOW_EMPTY_PASSWORD: yes
+                    MYSQL_DATABASE: laravel_ddd_testing
+                ports:
+                    - 3306:3306
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: PHP Setup
+              uses: ./.github/actions/php-setup
+
+            - name: Run tests
+              run: php artisan test --testsuite=Integration
+              shell: bash
