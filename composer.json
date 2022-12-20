@@ -21,7 +21,9 @@
         "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.5.10",
         "roave/security-advisories": "dev-latest",
-        "spatie/laravel-ignition": "^1.0"
+        "slevomat/coding-standard": "^8.7",
+        "spatie/laravel-ignition": "^1.0",
+        "squizlabs/php_codesniffer": "^3.7"
     },
     "autoload": {
         "classmap": [
