@@ -1,0 +1,20 @@
+name: Laravel DDD CI
+
+on: push
+
+jobs:
+    php-unit-tests:
+        name: PHP - Unit Tests
+        runs-on: ubuntu-20.04
+        if: (!contains(github.ref, 'refs/heads/master') && !contains(github.ref, 'refs/heads/staging'))
+
+        steps:
+            -   name: Checkout code
+                uses: actions/checkout@v3
+
+            -   name: PHP Setup
+                uses: ./.github/actions/php-setup
+
+            -   name: Run tests
+                run: ./vendor/bin/phpunit tests/Unit/
+                shell: bash
