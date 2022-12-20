@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Application\Rules\Project;
 
 use App\Domain\Project\Project;

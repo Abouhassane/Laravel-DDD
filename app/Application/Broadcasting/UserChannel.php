@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Application\Broadcasting;
 
 use App\Domain\User\User;
