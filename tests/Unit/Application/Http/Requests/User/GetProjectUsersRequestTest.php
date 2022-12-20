@@ -24,7 +24,7 @@ final class GetProjectUsersRequestTest extends RequestTestCase
         ];
 
         // Act && Assert
-        $this->assertTrue(
+        $this->assertFalse(
             $this->validateWithRouteParameters(
                 $params,
                 ['project' => $project]
