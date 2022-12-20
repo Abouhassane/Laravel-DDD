@@ -15,6 +15,12 @@ jobs:
             -   name: PHP Setup
                 uses: ./.github/actions/php-setup
 
+            -   name: Wait for MySQL
+                    run: |
+                        while ! mysqladmin ping --host=127.0.0.1 --silent; do
+                          sleep 1
+                        done
+
             -   name: Run tests
                 run: php artisan test --testsuite=Unit
                 shell: bash
@@ -40,6 +46,12 @@ jobs:
             - name: PHP Setup
               uses: ./.github/actions/php-setup
 
+            -   name: Wait for MySQL
+                    run: |
+                        while ! mysqladmin ping --host=127.0.0.1 --silent; do
+                          sleep 1
+                        done
+
             - name: Run tests
               run: php artisan test --parallel --testsuite=Integration1
               shell: bash
@@ -64,6 +76,12 @@ jobs:
 
             -   name: PHP Setup
                 uses: ./.github/actions/php-setup
+
+            -   name: Wait for MySQL
+                    run: |
+                        while ! mysqladmin ping --host=127.0.0.1 --silent; do
+                          sleep 1
+                        done
 
             -   name: Run tests
                 run: php artisan test --parallel --testsuite=Integration2
