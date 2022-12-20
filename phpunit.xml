@@ -11,6 +11,15 @@
         <testsuite name="Integration">
             <directory suffix="Test.php">./tests/Integration</directory>
         </testsuite>
+        <testsuite name="Integration1">
+            <directory suffix="Test.php">./tests/Integration/Application</directory>
+        </testsuite>
+        <testsuite name="Integration2">
+            <directory suffix="Test.php">./tests/Integration/Domain</directory>
+        </testsuite>
+        <testsuite name="Integration3">
+            <directory suffix="Test.php">./tests/Integration/Infrastructure</directory>
+        </testsuite>
     </testsuites>
     <coverage processUncoveredFiles="true">
         <include>
