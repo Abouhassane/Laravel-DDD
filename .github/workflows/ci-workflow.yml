@@ -16,5 +16,5 @@ jobs:
                 uses: ./.github/actions/php-setup
 
             -   name: Run tests
-                run: ./vendor/bin/phpunit tests/Unit/
+                run: php artisan test --testsuite=Unit
                 shell: bash
