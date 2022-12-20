@@ -3,6 +3,7 @@
 namespace App\Application\Http\Controllers\Api\Project;
 
 use App\Application\Http\Controllers\Controller;
+use App\Application\Http\Requests\Project\GetUserProjectsRequest;
 use App\Domain\Project\ProjectService;
 use App\Domain\User\User;
 use Illuminate\Http\JsonResponse;
@@ -17,11 +18,13 @@ class GetUserProjectsByStatusController extends Controller
         $this->projectService = $projectService;
     }
 
-    public function __invoke(User $user): JsonResponse
+    public function __invoke(User $user, GetUserProjectsRequest $request): JsonResponse
     {
         return new JsonResponse(
             [
-                'results' => $this->projectService->getAllUserProjectsGroupedByStatus($user),
+                'results' => $request->get('group_by_status')
+                    ? $this->projectService->getAllUserProjectsGroupedByStatus($user)
+                    : $user->projects()->withTrashed()->get(),
                 'nb_results' => 1,
             ],
             Response::HTTP_OK,

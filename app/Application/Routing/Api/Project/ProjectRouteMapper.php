@@ -16,7 +16,7 @@ final class ProjectRouteMapper implements RouteMapper
             'as' => 'project.',
             'prefix' => 'project',
         ], static function (Router $router): void {
-            $router->post('/{project}/users', GetProjectUsersController::class)->name('show');
+            $router->post('/{project}/users', GetProjectUsersController::class)->name('users');
         });
     }
 }

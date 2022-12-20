@@ -3,13 +3,14 @@
 namespace App\Application\Http\Controllers\Api\User;
 
 use App\Application\Http\Controllers\Controller;
+use App\Application\Http\Requests\User\GetProjectUsersRequest;
 use App\Domain\Project\Project;
 use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 class GetProjectUsersController extends Controller
 {
-    public function __invoke(Project $project): JsonResponse
+    public function __invoke(Project $project, GetProjectUsersRequest $request): JsonResponse
     {
         return new JsonResponse(
             [

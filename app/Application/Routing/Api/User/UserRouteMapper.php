@@ -16,7 +16,7 @@ final class UserRouteMapper implements RouteMapper
             'as' => 'user.',
             'prefix' => 'user',
         ], static function (Router $router): void {
-            $router->post('/{user}/projects', GetUserProjectsByStatusController::class)->name('show');
+            $router->post('/{user}/projects', GetUserProjectsByStatusController::class)->name('projects');
         });
     }
 }

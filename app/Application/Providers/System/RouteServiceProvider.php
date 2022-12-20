@@ -2,6 +2,7 @@
 
 namespace App\Application\Providers\System;
 
+use App\Domain\Project\Project;
 use App\Domain\User\User;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -32,7 +33,11 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         Route::bind('project', function (int $id) {
-            return User::withTrashed()->find($id);
+            if (Route::currentRouteName() === 'api.project.users') {
+                return Project::withTrashed()->find($id);
+            }
+
+            return Project::find($id);
         });
     }
 

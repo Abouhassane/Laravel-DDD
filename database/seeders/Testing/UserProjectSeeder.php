@@ -13,19 +13,19 @@ class UserProjectSeeder extends Seeder
     public function run(): void
     {
         User::factory()
+            ->has(Project::factory()->progressing())
+            ->has(Project::factory()->progressing()->deleted())
+            ->has(Project::factory()->blocked())
+            ->has(Project::factory()->terminated())
+            ->create();
+
+        User::factory()
             ->unverified()
             ->create();
 
         User::factory()
             ->has(Project::factory()->terminated())
             ->deleted()
-            ->create();
-
-        User::factory()
-            ->has(Project::factory()->progressing())
-            ->has(Project::factory()->progressing()->deleted())
-            ->has(Project::factory()->blocked())
-            ->has(Project::factory()->terminated())
             ->create();
     }
 }
