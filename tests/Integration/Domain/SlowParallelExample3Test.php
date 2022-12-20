@@ -6,7 +6,7 @@ namespace Tests\Integration\Domain;
 
 use Tests\Integration\IntegrationTestCase;
 
-final class SlowParallelExample2Test extends IntegrationTestCase
+final class SlowParallelExample3Test extends IntegrationTestCase
 {
     public function testTrueIsTrue(): void
     {
