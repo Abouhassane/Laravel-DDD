@@ -66,7 +66,7 @@ jobs:
                 uses: ./.github/actions/php-setup
 
             -   name: Run tests
-                run: php artisan test --parallel --testsuite=Integration2
+                run: php artisan test --parallel --processes=4 --testsuite=Integration2
                 shell: bash
 
     php-integration-tests-3:
