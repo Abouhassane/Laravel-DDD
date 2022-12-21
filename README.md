@@ -9,6 +9,7 @@ The master branch is an iso replica of the laravel framework
 ## Laravel DDD Branch
 
 The main branch that holds the laravel DDD structure is [laravel_official_DDD](https://github.com/Abouhassane/Laravel-DDD/tree/laravel_official_DDD)
+
 You'll find more documentation resources on this branch about laravel DDD
 
 ## Contributing
