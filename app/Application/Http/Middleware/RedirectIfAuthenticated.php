@@ -16,15 +16,15 @@ class RedirectIfAuthenticated
     /**
      * Handle an incoming request.
      *
-     * @param Request     $request
+     * @param Request $request
      * @param Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
-     * @param string|null ...$guards
+     * @param array   ...$guards
      *
      * @return Response|RedirectResponse
      */
     public function handle(Request $request, Closure $next, ...$guards)
     {
-        $guards = $guards == [] ? [null] : $guards;
+        $guards = $guards === [] ? [null] : $guards;
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
