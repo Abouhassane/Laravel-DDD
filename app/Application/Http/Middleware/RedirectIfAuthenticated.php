@@ -16,9 +16,9 @@ class RedirectIfAuthenticated
     /**
      * Handle an incoming request.
      *
-     * @param Request     $request
+     * @param Request $request
      * @param Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
-     * @param string|null ...$guards
+     * @param array   ...$guards
      *
      * @return Response|RedirectResponse
      */
@@ -26,6 +26,7 @@ class RedirectIfAuthenticated
     {
         $guards = $guards === [] ? [null] : $guards;
 
+        /** @var string|null $guard */
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
                 return redirect(RouteServiceProvider::HOME);
