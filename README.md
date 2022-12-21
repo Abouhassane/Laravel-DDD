@@ -6,18 +6,29 @@
 
 Coming soon...
 
-# Application Layer
-# Domain Layer
-# Infrastructure Layer
+### Application Layer
 
-# Eloquent Models (Domain/Infra separation(ish))
-# Testing
-    # CI workflow
-    # Unit Testing
-        # Stubs
-        # Builders
-        # Requests unit testing helpers
-    # Integration Testing
+### Domain Layer
+
+### Infrastructure Layer
+
+### Eloquent Models (Domain/Infra separation(ish))
+
+### Testing
+
+#### CI workflow
+
+#### Unit Testing
+
+##### Stubs
+##### Builders
+##### Requests unit testing helpers
+
+#### Integration Testing
+
+## DDD Guidelines
+
+Coming soon...
 
 ## Contributing
 
