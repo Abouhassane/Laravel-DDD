@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Application\Http;
 
 use App\Application\Http\Middleware\Authenticate;

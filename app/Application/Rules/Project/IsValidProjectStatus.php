@@ -20,9 +20,11 @@ class IsValidProjectStatus implements InvokableRule, DataAwareRule
      */
     public function __invoke($attribute, $value, $fail): void
     {
-        if (!$this->passes($value)) {
-            $fail($this->failMessage());
+        if ($this->passes($value)) {
+            return;
         }
+
+        $fail($this->failMessage());
     }
 
     /**
