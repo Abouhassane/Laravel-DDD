@@ -10,7 +10,7 @@ Coming soon...
 # Domain Layer
 # Infrastructure Layer
 
-# Eloquent Models
+# Eloquent Models (Domain/Infra separation(ish))
 # Testing
     # CI workflow
     # Unit Testing
