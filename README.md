@@ -2,15 +2,33 @@
 <img src="https://repository-images.githubusercontent.com/579700152/8ef2ea41-5907-4e25-9d80-1e8a7876d5fa" width="800" alt="Laravel DDD Logo">
 </p>
 
-## Master Branch
-
-The master branch is an iso replica of the laravel framework
-
 ## Laravel DDD Branch
 
-The main branch that holds the laravel DDD structure is [laravel_official_DDD](https://github.com/Abouhassane/Laravel-DDD/tree/laravel_official_DDD)
+Coming soon...
 
-You'll find more documentation resources on this branch about laravel DDD
+### 1 - Application Layer
+
+### 2 - Domain Layer
+
+### 3 - Infrastructure Layer
+
+### 4 - Eloquent Models (Domain/Infra separation(ish))
+
+### 5 - Testing
+
+#### A - CI workflow
+
+#### B - Unit Testing
+
+##### I - Stubs
+##### II - Builders
+##### III - Requests unit testing helpers
+
+#### C - Integration Testing
+
+## DDD Guidelines
+
+Coming soon...
 
 ## Contributing
 

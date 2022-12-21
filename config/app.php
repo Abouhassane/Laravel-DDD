@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool)env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -189,11 +189,19 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        \App\Application\Providers\System\AppServiceProvider::class,
+        \App\Application\Providers\System\AuthServiceProvider::class,
+        // App\Application\Providers\System\BroadcastServiceProvider::class,
+        \App\Application\Providers\System\EventServiceProvider::class,
+        \App\Application\Providers\System\RouteServiceProvider::class,
+        \App\Application\Providers\Project\ProjectServiceProvider::class,
+        \App\Application\Providers\User\UserServiceProvider::class,
+
+        /*
+         * Routing Service Providers
+         */
+        App\Application\Routing\AdminRoutingProvider::class,
+        App\Application\Routing\ApiRoutingProvider::class,
 
     ],
 
@@ -204,7 +212,7 @@ return [
     |
     | This array of class aliases will be registered when this application
     | is started. However, feel free to register as many as you wish as
-    | the aliases are "lazy" loaded so they don't hinder performance.
+    | the aliases are "lazy" loaded, so they don't hinder performance.
     |
     */
 
