@@ -1,0 +1,13 @@
+name: Learning CI
+
+on: push
+
+# A workflow run is made of one or more jobs that can run sequentially or in parallel
+jobs:
+    # This workflow contain one single job called "build"
+    build:
+        runs-on: ubuntu-latest
+        # Steps represents a sequence of tasks that will be executed as part of the job
+        steps:
+            - name: RUN hello world!
+              run: echo Hello world
