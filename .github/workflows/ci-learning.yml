@@ -3,14 +3,15 @@ name: Learning CI
 on:
     push:
         branch: [github_ci_testing]
-        path: 'tests/*'
+        paths:
+            - 'tests/*'
 
 # A workflow run is made of one or more jobs that can run sequentially or in parallel
 jobs:
-    # This workflow contain one single job called "build"
+    # This workflow contains one single job called "build"
     build:
         runs-on: ubuntu-latest
-        # Steps represents a sequence of tasks that will be executed as part of the job
+        # Steps, represents a sequence of tasks that will be executed as part of the job
         steps:
             - name: RUN one-line script!
               run: echo Hello world
