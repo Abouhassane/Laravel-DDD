@@ -3,7 +3,7 @@
 return [
     'project' => [
         'status' => [
-            'invalid' => 'Provided project status is invalid.',
+            'invalid' => 'Provided project status is invalid!',
         ],
     ],
 ];
