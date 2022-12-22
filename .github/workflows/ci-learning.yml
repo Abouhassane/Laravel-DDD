@@ -9,5 +9,10 @@ jobs:
         runs-on: ubuntu-latest
         # Steps represents a sequence of tasks that will be executed as part of the job
         steps:
-            - name: RUN hello world!
+            - name: RUN one-line script!
               run: echo Hello world
+
+            - name: RUN multi-line script!
+              run: |
+                    echo Hello world 1,
+                    echo Hello world 2
