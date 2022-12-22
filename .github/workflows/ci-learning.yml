@@ -1,6 +1,9 @@
 name: Learning CI
 
-on: push
+on:
+    push:
+        branch: [github_ci_testing]
+        path: 'tests/*'
 
 # A workflow run is made of one or more jobs that can run sequentially or in parallel
 jobs:

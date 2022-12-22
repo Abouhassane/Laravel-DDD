@@ -10,7 +10,7 @@ final class SlowParallelExample1Test extends IntegrationTestCase
 {
     public function testTrueIsTrue(): void
     {
-        sleep(20);
+        sleep(2);
         $this->assertTrue(true);
     }
 }
